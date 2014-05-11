@@ -4,6 +4,7 @@ colnames(data) <- c("Date","Time","Global_active_power","Global_reactive_power",
 
 timeorder <- as.POSIXct(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
 
+par(mfrow=c(1,1))
 Sub_metering_1 <- data$Sub_metering_1
 Sub_metering_2 <- data$Sub_metering_2
 Sub_metering_3 <- data$Sub_metering_3
@@ -13,6 +14,6 @@ par(mfrow=c(1,1))
 plot(timeorder, Sub_metering_1, type="l", col="black",new=TRUE, ylab="Engergy sub metering", xlab="")
 points(timeorder, Sub_metering_2, type="l", col="red",new=TRUE)
 points(timeorder, Sub_metering_3, type="l", col="blue",new=TRUE)
-legend("topright", lty=1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"), cex=0.8)
+legend("topright", lty=1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
 dev.off()
 
